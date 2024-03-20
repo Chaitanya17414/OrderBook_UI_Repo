@@ -23,7 +23,6 @@ const Search = () => {
     const handleSearch = () => {
         let tempStr = localStorage.getItem("LoginJSON");
         let tempObj = JSON.parse(tempStr);
-        
         if(isValid > 0){
             if(tempObj!= null) {
                 fetch("http://localhost:8080/search",
@@ -62,6 +61,15 @@ const Search = () => {
                             
                             type="text" 
                             name="PO" 
+                            onChange={(e) =>handleOnChange(e)}
+                        />
+                    </div>
+                    <div>
+                        <label>PGM: </label>
+                        <input 
+                            
+                            type="text" 
+                            name="PGM" 
                             onChange={(e) =>handleOnChange(e)}
                         />
                     </div>

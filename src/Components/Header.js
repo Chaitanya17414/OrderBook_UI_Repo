@@ -5,6 +5,9 @@ import { Link} from 'react-router-dom';
 
 const Header = () => {
 
+    let loginJson = localStorage.getItem("LoginJSON");
+    let LoginJSON = JSON.parse(loginJson);
+
     const handleLogOut = () => {
         localStorage.setItem("OrderbookRecords", null);
         localStorage.setItem("LoginJSON", null);
@@ -17,7 +20,7 @@ const Header = () => {
         <div className='width-adjust'>
             <div className='logo-adjust'>
                 <span className="icon-adjustment book-icon"><GiBookAura /></span>
-                <h2 className='header'>Orderbook</h2>
+                <h2 className='header'>{LoginJSON.loginId}'s Orderbook</h2>
             </div>
             <div><Navbar /></div>
             <Link to="/" className="icon-adjustment search-icon" onClick={handleLogOut}><TbLogout2 />LogOut</Link>

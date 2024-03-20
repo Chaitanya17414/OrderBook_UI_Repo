@@ -27,7 +27,6 @@ const AddReferenceData = () => {
             })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
                 setAddrow(data)
                 let objValue = JSON.stringify(data)
                 localStorage.setItem("EditedData", objValue);

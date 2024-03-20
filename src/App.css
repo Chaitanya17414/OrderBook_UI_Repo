@@ -39,13 +39,18 @@
   width: 80%;
   letter-spacing: 0.8px;
 }
-
+.input-container .login-icons {
+  padding: 17px 9px 15px 13px;
+  background: lightgray;
+  color: black;
+  border-radius: 15px 0 0 15px;
+}
 .input-container input {
   height: 1.5em;
-  border-radius: 15px;
+  border-radius: 0 15px 15px 0;
   border-width: 15px;
   border: white;
-  box-shadow: 0 0 6px rgb(166, 159, 255);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px;
   outline: none;
   padding: 10px;
   font-size: 20px;
@@ -54,7 +59,7 @@
   border-radius: 15px;
   height: 50px;
   border: white;
-  box-shadow: 0 0 6px rgb(166, 159, 255);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px;
   outline: none;
   padding: 10px;
   font-size: 16px;
@@ -62,8 +67,7 @@
 }
 
 input:focus {
-  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
-    0 0 16px rgb(125, 115, 255);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px;
 
   outline: 0 none;
 }

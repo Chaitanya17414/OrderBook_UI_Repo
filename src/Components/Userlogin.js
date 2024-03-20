@@ -1,12 +1,13 @@
 
 import { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
+import { FaRegUserCircle,FaUnlockAlt  } from "react-icons/fa"
 
  
 function UserLogin() {
 
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const [loginId, setLoginID] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   
@@ -19,7 +20,7 @@ function UserLogin() {
   const handleLogin = (selectVal) => {
     // Create a request body with the username and password
     const requestBody = {
-      username: username,
+      loginId: loginId,
       password: password,
     };
     let loginJson= JSON.stringify(requestBody)
@@ -54,29 +55,32 @@ function UserLogin() {
 
                 <div className='input-container'>
 
-                  <label>Username </label>
+                  <label>Login ID </label>
+                  <div>
+                    <span className="login-icons"><FaRegUserCircle /></span>
+                     <input type='text' value={loginId}
 
-                  <input type='text' value={username}
-
-                    onChange={(e) => setUsername(e.target.value)} />
+                      onChange={(e) => setLoginID(e.target.value)} />
+                  </div>
 
                 </div>
 
                   <div className='input-container'>
 
                     <label>Password </label>
+                    <div>
+                      <span className="login-icons"><FaUnlockAlt /></span>
+                       <input type='password' value={password}
 
-                    <input type='password' value={password}
-
-                      onChange={(e) => setPassword(e.target.value)} />
+                        onChange={(e) => setPassword(e.target.value)} />
+                    </div>
 
                   </div>
                 <div className="dropdown input-container">
                   <label>Login as</label>
                     <select onChange={handleChange} >
                         <option value="">Select Login type</option>
-                        <option value="User">User</option>
-                        <option value="IBU_Head">IBU Head </option>
+                        <option value="Admin">Admin</option>
                         <option value="PM">Program Manager </option>
                     </select>
                 </div>
